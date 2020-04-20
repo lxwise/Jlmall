@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.jl</groupId>
+    <artifactId>jl-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.jl</groupId>
+  <artifactId>jl-search</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+  	<module>jl-search-interface</module>
+  	<module>jl-search-service</module>
+  </modules>
+  <dependencies>
+		<!-- 依赖jl-manager-common -->
+		<dependency>
+			<groupId>com.jl</groupId>
+			<artifactId>jl-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<!-- 配置tomcat插件 -->
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<configuration>
+					<path>/</path>
+					<port>8084</port>
+				<!-- 	<url>http://192.168.25.128:8082/manager/text</url>
+					<username>tomcat</username>
+					<password>tomcat</password> -->
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
